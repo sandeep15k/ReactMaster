@@ -1,16 +1,25 @@
-import React, { useState } from 'react';
-import Web3 from 'web3';
-import { OpenSeaSDK } from 'opensea-js';
- 
+import React, { useState } from "react";
+import { User } from "./components/User";
+
+const ValidPassword = () => <h1>Valid Password</h1>;
+const InValidPassword = () => <h1>invalid Password</h1>;
+
+const Password = ({ isValid }) => {
+    return( 
+    <div>{isValid ? <ValidPassword/> : <InValidPassword/>} </div>
+    )
+};
+
+
 
 function App() {
-  console.log(OpenSeaSDK,"getNFTsByAccount");
 
-  return (
-    <div>
-      <button >Connect to MetaMask</button>
-    </div>
-  );
+
+    return (
+        <div>
+            <Password isValid={true} />
+        </div>
+    );
 }
 
 export default App;
